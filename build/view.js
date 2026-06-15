@@ -1021,6 +1021,19 @@ const Style = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+
+
+
+
+
+		${cardContainerSl}{
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
+		padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.desktop)};
+		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.desktop)};
+		border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
+
+		
+		}
 		
 		
 		${cardsGridSl}{
@@ -1036,6 +1049,12 @@ const Style = ({
 	
 
 		}
+		  	${cardContainerSl}{
+		padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.tablet)};
+		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.tablet)};
+
+		
+		}
 		
 		}
 
@@ -1044,6 +1063,13 @@ const Style = ({
 		  grid-template-columns: repeat(${styles?.columns?.mobile},1fr);
 	
 
+		}
+
+			  	${cardContainerSl}{
+		padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.mobile)};
+		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.mobile)};
+
+		
 		}
 		
 		}

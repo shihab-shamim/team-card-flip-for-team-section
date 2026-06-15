@@ -10,6 +10,9 @@
 .wp-block-tsb-team-card-flip-pro a {
   outline: none !important;
 }
+.wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container {
+  overflow: hidden;
+}
 .wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid {
   display: grid;
 }
@@ -27,7 +30,7 @@
 }
 .wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid .tcf_cards_item .tcf_cards_thumbnail img {
   width: 100%;
-  height: 390px;
+  height: 420px;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;

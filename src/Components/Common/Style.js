@@ -1,5 +1,5 @@
 import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
-import { getColorsCSS } from '../../../../bpl-tools/utils/getCSS';
+import { getBackgroundCSS, getBoxCSS, getColorsCSS } from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id }) => {
 	const { styles={} } = attributes || {};
@@ -11,6 +11,19 @@ const Style = ({ attributes, id }) => {
 
 	return <style dangerouslySetInnerHTML={{
 		__html: `
+
+
+
+
+
+		${cardContainerSl}{
+		${getBackgroundCSS(styles?.bg)}
+		padding:${getBoxCSS(styles?.padding?.desktop)};
+		margin:${getBoxCSS(styles?.margin?.desktop)};
+		border-radius:${getBoxCSS(styles?.radius)};
+
+		
+		}
 		
 		
 		${cardsGridSl}{
@@ -26,6 +39,12 @@ const Style = ({ attributes, id }) => {
 	
 
 		}
+		  	${cardContainerSl}{
+		padding:${getBoxCSS(styles?.padding?.tablet)};
+		margin:${getBoxCSS(styles?.margin?.tablet)};
+
+		
+		}
 		
 		}
 
@@ -34,6 +53,13 @@ const Style = ({ attributes, id }) => {
 		  grid-template-columns: repeat(${styles?.columns?.mobile},1fr);
 	
 
+		}
+
+			  	${cardContainerSl}{
+		padding:${getBoxCSS(styles?.padding?.mobile)};
+		margin:${getBoxCSS(styles?.margin?.mobile)};
+
+		
 		}
 		
 		}
