@@ -1,7 +1,6 @@
 
 
-// SVG icon এর hardcoded fill color সরিয়ে currentColor দেওয়া হচ্ছে
-// যাতে CSS color property দিয়ে icon এর রঙ control করা যায়
+
 const normalizeIconColor = (svgString) => {
   if (!svgString) return svgString;
   return svgString

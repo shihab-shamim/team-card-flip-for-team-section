@@ -1,5 +1,5 @@
 import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
-import { getBackgroundCSS, getBoxCSS, getColorsCSS, getTypoCSS } from '../../../../bpl-tools/utils/getCSS';
+import { getBackgroundCSS, getBoxCSS, getTypoCSS } from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id }) => {
 	const { styles={} } = attributes || {};

@@ -1185,8 +1185,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-// SVG icon এর hardcoded fill color সরিয়ে currentColor দেওয়া হচ্ছে
-// যাতে CSS color property দিয়ে icon এর রঙ control করা যায়
 const normalizeIconColor = svgString => {
   if (!svgString) return svgString;
   return svgString.replace(/fill\s*=\s*["'][^"']*["']/gi, 'fill="currentColor"').replace(/(<svg[^>]*)(>)/i, (match, p1, p2) => {
