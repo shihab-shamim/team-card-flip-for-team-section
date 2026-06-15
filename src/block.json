@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "tsb/team-card-flip-pro",
+	"version": "1.0.0",
+	"title": "Team Card Flip ",
+	"category": "widgets",
+	"description": "Team Card Flip  is a WordPress plugin that allows you to create 3D fold out reveal effects on your website.",
+	"keywords": [
+		"Team Card Flip","fold","reveal","cards"
+	],
+	"textdomain": "team-section",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"purposeType": {
+			"type": "string",
+			"default": "test"
+		},
+		"colors":{
+			"type":"object",
+			"default":{
+				"color": "black",
+				"bg": "#B1C5A4"
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}
