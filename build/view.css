@@ -10,17 +10,6 @@
 .wp-block-tsb-team-card-flip-pro a {
   outline: none !important;
 }
-.wp-block-tsb-team-card-flip-pro .tcf_cards_section {
-  padding-top: 5%;
-}
-.wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container {
-  width: 100%;
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
 .wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid {
   display: grid;
 }
