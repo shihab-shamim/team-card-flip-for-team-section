@@ -1043,128 +1043,128 @@ const Style = ({
     dangerouslySetInnerHTML: {
       __html: `
 
-		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.teamProfile?.name?.typo)?.googleFontLink}
-		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.teamProfile?.designation?.typo)?.googleFontLink}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.teamProfile?.name?.typo)?.googleFontLink}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.teamProfile?.designation?.typo)?.googleFontLink}
 
 
-		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(cardsNameSl, styles?.teamProfile?.name?.typo)?.styles}
-		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(cardsDesignationSl, styles?.teamProfile?.designation?.typo)?.styles}
-
-
-
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(cardsNameSl, styles?.teamProfile?.name?.typo)?.styles}
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(cardsDesignationSl, styles?.teamProfile?.designation?.typo)?.styles}
 
 
 
-		${cardContainerSl}{
-		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
-		padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.desktop)};
-		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.desktop)};
-		border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
-
-		
-		}
-		
-		
-		${cardsGridSl}{
-		  grid-template-columns: repeat(${styles?.columns?.desktop},1fr);
-		 column-gap: ${styles?.columnGap || 15}px;
-		 row-gap: ${styles?.rowGap || 15}px;
-
-		}
 
 
-		${cardsImageSl}{
-			width: ${styles?.image?.width};
-			height: ${styles?.image?.height};
-			object-fit: ${styles?.image?.imageFit};
-		}
 
-		${cardsCardSl}:hover img {
-                        transform: scale(${styles?.image?.hoverScal});
-                    }
+			${cardContainerSl}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
+			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.desktop)};
+			margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.desktop)};
+			border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.radius)};
+
+			
+			}
+			
+			
+			${cardsGridSl}{
+			grid-template-columns: repeat(${styles?.columns?.desktop},1fr);
+			column-gap: ${styles?.columnGap || 15}px;
+			row-gap: ${styles?.rowGap || 15}px;
+
+			}
 
 
-					${cardSocialSl}{
-					gap: ${styles?.icon?.gap}px;					
-					}
+			${cardsImageSl}{
+				width: ${styles?.image?.width};
+				height: ${styles?.image?.height};
+				object-fit: ${styles?.image?.imageFit};
+			}
 
-					${cardSocialLinkSl}{
-					color:${styles?.icon?.color};
-					border: ${styles?.icon?.border?.width} ${styles?.icon?.border?.style} ${styles?.icon?.border?.color};
-					width: ${styles?.icon?.width};
-					height: ${styles?.icon?.height};
-					svg{
-					width: ${styles?.icon?.size}px;
-					height: ${styles?.icon?.size}px;
-					
-					}
-					}
+			${cardsCardSl}:hover img {
+							transform: scale(${styles?.image?.hoverScal});
+						}
 
-					 ${cardSocialLinkSl}:hover {
-                                    background-color: ${styles?.icon?.hoverBackgroundColor};
-                                    color: ${styles?.icon?.hoverColor};
 
-									svg{
-									 color:${styles?.icon?.hoverColor};
-									 fill:${styles?.icon?.hoverColor};
+						${cardSocialSl}{
+						gap: ${styles?.icon?.gap}px;					
+						}
+
+						${cardSocialLinkSl}{
+						color:${styles?.icon?.color};
+						border: ${styles?.icon?.border?.width} ${styles?.icon?.border?.style} ${styles?.icon?.border?.color};
+						width: ${styles?.icon?.width};
+						height: ${styles?.icon?.height};
+						svg{
+						width: ${styles?.icon?.size}px;
+						height: ${styles?.icon?.size}px;
+						
+						}
+						}
+
+						${cardSocialLinkSl}:hover {
+										background-color: ${styles?.icon?.hoverBackgroundColor};
+										color: ${styles?.icon?.hoverColor};
+
+										svg{
+										color:${styles?.icon?.hoverColor};
+										fill:${styles?.icon?.hoverColor};
+										}
 									}
-                                }
-					${cardSocialOverlaySl}{
-					background-color: ${styles?.icon?.overlayColor};
-					}
+						${cardSocialOverlaySl}{
+						background-color: ${styles?.icon?.overlayColor};
+						}
 
-					${cardsCardSl}{
-						${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.teamProfile?.bg)}
-					}
+						${cardsCardSl}{
+							${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.teamProfile?.bg)}
+						}
 
-					${cardsInfoSl}{
-					padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.padding)};
-					color: ${styles?.teamProfile?.color};
-					text-align:${styles?.teamProfile?.textAlign};
-					}
+						${cardsInfoSl}{
+						padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.padding)};
+						color: ${styles?.teamProfile?.color};
+						text-align:${styles?.teamProfile?.textAlign};
+						}
 
-					${cardsNameSl}{
-					margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.name?.margin)};
-					}
+						${cardsNameSl}{
+						margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.name?.margin)};
+						}
 
-					${cardsDesignationSl}{
-					margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.designation?.margin)};
-					}
-
+						${cardsDesignationSl}{
+						margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.designation?.margin)};
+						}
 
 
-		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
-			${cardsGridSl}{
-		  grid-template-columns: repeat(${styles?.columns?.tablet},1fr);
-	
 
-		}
-		  	${cardContainerSl}{
-		padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.tablet)};
-		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.tablet)};
-
+			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
+				${cardsGridSl}{
+			grid-template-columns: repeat(${styles?.columns?.tablet},1fr);
 		
-		}
+
+			}
+				${cardContainerSl}{
+			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.tablet)};
+			margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.tablet)};
+
+			
+			}
+			
+			}
+
+				${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
+				${cardsGridSl}{
+			grid-template-columns: repeat(${styles?.columns?.mobile},1fr);
 		
-		}
 
-			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
-			${cardsGridSl}{
-		  grid-template-columns: repeat(${styles?.columns?.mobile},1fr);
-	
+			}
 
-		}
+					${cardContainerSl}{
+			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.mobile)};
+			margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.mobile)};
 
-			  	${cardContainerSl}{
-		padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.padding?.mobile)};
-		margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.margin?.mobile)};
+			
+			}
+			
+			}
 
-		
-		}
-		
-		}
-
-	`
+		`
     }
   });
 };
