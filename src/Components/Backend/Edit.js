@@ -15,7 +15,7 @@ const Edit = (props) => {
       <div {...useBlockProps()}>
         <Style attributes={attributes} id={`block-${clientId}`} />
 
-                <OneCard/>
+                <OneCard attributes={attributes} setAttributes={setAttributes} />
     
       </div>
     </>
