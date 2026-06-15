@@ -23,17 +23,6 @@
 }
 .wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid {
   display: grid;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 576px) {
-  .wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 992px) {
-  .wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 .wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid .tcf_cards_item {
   background-color: #000;
