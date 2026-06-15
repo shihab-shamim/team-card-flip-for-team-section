@@ -16,9 +16,6 @@
 .wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid {
   display: grid;
 }
-.wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid .tcf_cards_item {
-  background-color: #000;
-}
 .wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid .tcf_cards_item .tcf_cards_thumbnail {
   overflow: hidden;
   position: relative;
@@ -62,22 +59,6 @@
   justify-content: center;
   text-align: center;
   text-decoration: none;
-}
-.wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid .tcf_cards_item .tcf_cards_info {
-  padding: 25px;
-  color: #fff;
-  text-align: center;
-}
-.wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid .tcf_cards_item .tcf_cards_info .tcf_cards_name {
-  margin: 0 0 5px;
-  font-size: 30px;
-  font-family: bignoodletitling;
-  letter-spacing: 5px;
-}
-.wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid .tcf_cards_item .tcf_cards_info .tcf_cards_designation {
-  font-size: 17px;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 
 /*# sourceMappingURL=view.css.map*/

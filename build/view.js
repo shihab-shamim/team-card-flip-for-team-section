@@ -1036,9 +1036,20 @@ const Style = ({
   const cardSocialSl = `${cardsCardSl} .tcf_cards_social_list`;
   const cardSocialLinkSl = `${cardSocialSl} .tcf_cards_social_link`;
   const cardSocialOverlaySl = `${cardsCardSl} .tcf_cards_social_overlay`;
+  const cardsInfoSl = `${cardsCardSl} .tcf_cards_info`;
+  const cardsNameSl = `${cardsInfoSl} .tcf_cards_name`;
+  const cardsDesignationSl = `${cardsInfoSl} .tcf_cards_designation`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+
+		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.teamProfile?.name?.typo)?.googleFontLink}
+		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.teamProfile?.designation?.typo)?.googleFontLink}
+
+
+		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(cardsNameSl, styles?.teamProfile?.name?.typo)?.styles}
+		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(cardsDesignationSl, styles?.teamProfile?.designation?.typo)?.styles}
+
 
 
 
@@ -1100,6 +1111,24 @@ const Style = ({
                                 }
 					${cardSocialOverlaySl}{
 					background-color: ${styles?.icon?.overlayColor};
+					}
+
+					${cardsCardSl}{
+						${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.teamProfile?.bg)}
+					}
+
+					${cardsInfoSl}{
+					padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.padding)};
+					color: ${styles?.teamProfile?.color};
+					text-align:${styles?.teamProfile?.textAlign};
+					}
+
+					${cardsNameSl}{
+					margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.name?.margin)};
+					}
+
+					${cardsDesignationSl}{
+					margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.teamProfile?.designation?.margin)};
 					}
 
 

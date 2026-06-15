@@ -7,7 +7,7 @@ import {
   SelectControl,
   __experimentalUnitControl as UnitControl,BorderControl
 } from "@wordpress/components";
-import { Background, BoxControl, ColorControl, ColorsControl, Device, Label } from "../../../../../../bpl-tools/Components";
+import { Background, BoxControl, ColorControl, ColorsControl, Device, Label, Typography } from "../../../../../../bpl-tools/Components";
 import { updateData } from "../../../../utils/functions";
 
 const Style = ({ attributes, setAttributes,device }) => {
@@ -36,6 +36,35 @@ const Style = ({ attributes, setAttributes,device }) => {
             <BoxControl  className='mt15' label="Radius"  values={styles?.radius} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"radius")})}/>
 
           
+
+          </PanelBody>
+
+          <PanelBody className="bPlPanelBody"
+            title={__("Team Profile", "team-section")}
+            initialOpen={false}>
+
+              <Background label={"Background"} value={styles?.teamProfile?.bg} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","bg")})} />
+
+                <BoxControl label="Padding" className="mt15" values={styles?.teamProfile?.padding} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","padding")})}/>
+
+                  <ColorControl label="Text Color" className="mt15" value={styles?.teamProfile?.color} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","color")})}/>
+
+                  <SelectControl label="Text Align" className="mt15" value={styles?.teamProfile?.textAlign} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","textAlign")})}
+                   options={[
+                    { value: "center", label: "Center" },
+                    { value: "left", label: "Left" },
+                    { value: "right", label: "Right" }
+                  ]}/>
+
+                     <BoxControl label="Name Margin" className="mt15" values={styles?.teamProfile?.name?.margin} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","name","margin")})}/>
+
+                         <Typography label="Name Typography" className="mt15" value={styles?.teamProfile?.name?.typo} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","name","typo")})}/>
+
+                          <BoxControl label="Designation Margin" className="mt15" values={styles?.teamProfile?.designation?.margin} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","designation","margin")})}/>
+
+                         <Typography label="Designation Typography" className="mt15" value={styles?.teamProfile?.designation?.typo} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"teamProfile","designation","typo")})}/>
+
+              
 
           </PanelBody>
 
@@ -80,6 +109,7 @@ const Style = ({ attributes, setAttributes,device }) => {
                       <BorderControl label="Border" className='mt15' value={styles?.icon?.border} onChange={(v)=> setAttributes({ styles: updateData(styles,v,"icon","border")})} />
 
           </PanelBody>
+          
     </>
   );
 };

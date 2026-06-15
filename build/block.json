@@ -178,6 +178,70 @@
           "size": 16,
           "gap": 10,
           "overlayColor": "rgba(0, 0, 0, 0.7)"
+        },
+        "teamProfile": {
+          "bg": {
+            "type": "solid",
+            "color": "#000000"
+          },
+          "padding": {
+            "top": "25px",
+            "bottom": "25px",
+            "left": "25px",
+            "right": "25px"
+          },
+          "color": "#ffffff",
+          "textAlign": "center",
+          "name": {
+            "margin": {
+              "top": "0px",
+              "bottom": "30px",
+              "left": "0px",
+              "right": "0px"
+            },
+            "typo": {
+              "fontFamily": "",
+              "fontCategory": "",
+              "fontWeight": "",
+              "fontVariant": "",
+              "isUploadFont": false,
+              "fontSize": {
+                "desktop": 30,
+                "tablet": 30,
+                "mobile": 30
+              },
+              "fontStyle": "normal",
+              "textTransform": "none",
+              "textDecoration": "none",
+              "lineHeight": "",
+              "letterSpace": "5px"
+            }
+          },
+          "designation": {
+            "margin": {
+              "top": "5px",
+              "bottom": "0px",
+              "left": "0px",
+              "right": "0px"
+            },
+            "typo": {
+              "fontFamily": "",
+              "fontCategory": "700",
+              "fontWeight": "700",
+              "fontVariant": "",
+              "isUploadFont": false,
+              "fontSize": {
+                "desktop": 17,
+                "tablet": 17,
+                "mobile": 17
+              },
+              "fontStyle": "normal",
+              "textTransform": "none",
+              "textDecoration": "none",
+              "lineHeight": "",
+              "letterSpace": "5px"
+            }
+          }
         }
       }
     }

@@ -20,7 +20,7 @@ $primaryColor: #4527a4;
     
 
             .tcf_cards_item {
-                background-color: #000;
+              
 
                 .tcf_cards_thumbnail {
                     overflow: hidden;
@@ -45,7 +45,7 @@ $primaryColor: #4527a4;
                     }
 
                     .tcf_cards_social_overlay {
-                        // background-color: rgba(0, 0, 0, 0.7);
+                        
                         position: absolute;
                         text-align: center;
                         height: 100%;
@@ -80,21 +80,21 @@ $primaryColor: #4527a4;
                 }
 
                 .tcf_cards_info {
-                    padding: 25px;
-                    color: #fff;
-                    text-align: center;
+                    // padding: 25px;
+                    // color: #fff;
+                    // text-align: center;
 
                     .tcf_cards_name {
-                        margin: 0 0 5px;
-                        font-size: 30px;
-                        font-family: bignoodletitling;
-                        letter-spacing: 5px;
+                        // margin: 0 0 5px;
+                        // font-size: 30px;
+                        // font-family: bignoodletitling;
+                        // letter-spacing: 5px;
                     }
 
                     .tcf_cards_designation {
-                        font-size: 17px;
-                        text-transform: uppercase;
-                        font-weight: bold;
+                        // font-size: 17px;
+                        // text-transform: uppercase;
+                        // font-weight: bold;
                     }
                 }
             }

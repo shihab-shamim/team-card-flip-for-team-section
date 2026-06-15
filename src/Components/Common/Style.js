@@ -1,5 +1,5 @@
 import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
-import { getBackgroundCSS, getBoxCSS, getColorsCSS } from '../../../../bpl-tools/utils/getCSS';
+import { getBackgroundCSS, getBoxCSS, getColorsCSS, getTypoCSS } from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id }) => {
 	const { styles={} } = attributes || {};
@@ -13,9 +13,20 @@ const Style = ({ attributes, id }) => {
 	const cardSocialSl = `${cardsCardSl} .tcf_cards_social_list`; 
 	const cardSocialLinkSl = `${cardSocialSl} .tcf_cards_social_link`; 
 	const cardSocialOverlaySl = `${cardsCardSl} .tcf_cards_social_overlay`; 
+	const cardsInfoSl = `${cardsCardSl} .tcf_cards_info`; 
+	const cardsNameSl = `${cardsInfoSl} .tcf_cards_name`; 
+	const cardsDesignationSl = `${cardsInfoSl} .tcf_cards_designation`; 
 
 	return <style dangerouslySetInnerHTML={{
 		__html: `
+
+		 ${getTypoCSS("", styles?.teamProfile?.name?.typo)?.googleFontLink}
+		 ${getTypoCSS("", styles?.teamProfile?.designation?.typo)?.googleFontLink}
+
+
+		 ${getTypoCSS(cardsNameSl, styles?.teamProfile?.name?.typo)?.styles}
+		 ${getTypoCSS(cardsDesignationSl, styles?.teamProfile?.designation?.typo)?.styles}
+
 
 
 
@@ -77,6 +88,24 @@ const Style = ({ attributes, id }) => {
                                 }
 					${cardSocialOverlaySl}{
 					background-color: ${styles?.icon?.overlayColor};
+					}
+
+					${cardsCardSl}{
+						${getBackgroundCSS(styles?.teamProfile?.bg)}
+					}
+
+					${cardsInfoSl}{
+					padding:${getBoxCSS(styles?.teamProfile?.padding)};
+					color: ${styles?.teamProfile?.color};
+					text-align:${styles?.teamProfile?.textAlign};
+					}
+
+					${cardsNameSl}{
+					margin:${getBoxCSS(styles?.teamProfile?.name?.margin)};
+					}
+
+					${cardsDesignationSl}{
+					margin:${getBoxCSS(styles?.teamProfile?.designation?.margin)};
 					}
 
 
