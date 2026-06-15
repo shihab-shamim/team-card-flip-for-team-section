@@ -45,7 +45,9 @@ $primaryColor: #4527a4;
                     }
 
                     & img {
-                        width: 100%;
+                        width: 370px;
+                        height: 390px;
+                        object-fit: cover;
                         display: block;
                         transition: all 0.4s ease 0s;
                     }

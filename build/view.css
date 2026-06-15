@@ -46,7 +46,10 @@
   transform: rotateY(0deg) scale(1, 1);
 }
 .wp-block-tsb-team-card-flip-pro .tcf_cards_section .tcf_cards_container .tcf_cards_grid .tcf_cards_item .tcf_cards_thumbnail img {
-  width: 100%;
+  width: 370px;
+  height: 390px;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   transition: all 0.4s ease 0s;
 }
