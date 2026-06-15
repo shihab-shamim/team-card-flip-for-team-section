@@ -1,13 +1,13 @@
 import { __ } from '@wordpress/i18n';
 
-import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
+import { PanelBody, PanelRow, RangeControl, SelectControl, ToggleControl } from '@wordpress/components';
 import { purposeTypeOptions } from '../../../../utils/options';
 import { updateData } from '../../../../utils/functions';
-import { ItemsPanel } from '../../../../../../bpl-tools/Components';
+import { Device, ItemsPanel, Label } from '../../../../../../bpl-tools/Components';
 import OneSetting from '../../../Common/cards/OneSetting';
 
 
-const General = ({ attributes, setAttributes }) => {
+const General = ({ attributes, setAttributes,device }) => {
    const { profiles=[],options={} ,styles={}} = attributes || {};
   const newProfile = {
     name: `Team ${profiles.length + 1}`,
@@ -47,6 +47,29 @@ const General = ({ attributes, setAttributes }) => {
           itemLabel="Profile"
           ItemSettings={OneSetting}
         />
+      </PanelBody>
+
+       <PanelBody className="bPlPanelBody"
+        title={__("Layouts", "team-section")}
+        initialOpen={false}>
+          <PanelRow> <Label> {__("Columns", "team-section")} </Label> <Device/> </PanelRow>
+
+          <RangeControl value={styles?.columns[device]} min={1} max={12} onChange={(val)=> setAttributes({ styles: { ...styles, columns: { ...styles.columns, [device]: val } } })} />
+
+            <RangeControl
+            label={__("Column Gap", "team-section")}
+            value={styles?.columnGap}
+            min={0}
+            max={200}
+            onChange={(val)=> setAttributes({ styles: { ...styles, columnGap: val } })} />
+
+            <RangeControl
+            label={__("Row Gap", "team-section")}
+            value={styles?.rowGap}
+            min={0}
+            max={200}
+            onChange={(val)=> setAttributes({ styles: { ...styles, rowGap: val } })} />
+
       </PanelBody>
 
 
