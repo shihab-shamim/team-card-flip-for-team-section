@@ -1048,7 +1048,13 @@ const OneCard = ({
   setAttributes
 }) => {
   const {
-    profiles = []
+    profiles = [],
+    options = {
+      showName: true,
+      showDesignation: true,
+      showSocial: true,
+      openInNewTab: true
+    }
   } = attributes || {};
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
     className: "tcf_cards_section"
@@ -1064,7 +1070,7 @@ const OneCard = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: profile.image,
     alt: profile.name
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), options.showSocial && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tcf_cards_social_overlay"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
     className: "tcf_cards_social_list"
@@ -1073,15 +1079,17 @@ const OneCard = ({
     key: sIndex
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: item.link,
+    target: options.openInNewTab ? "_blank" : "_self",
+    rel: options.openInNewTab ? "noopener noreferrer" : "",
     className: "tcf_cards_social_link",
     dangerouslySetInnerHTML: {
       __html: item.icon
     }
   })))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tcf_cards_info"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
+  }, options.showName && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
     className: "tcf_cards_name"
-  }, profile.name), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
+  }, profile.name), options.showDesignation && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
     className: "tcf_cards_designation"
   }, profile.designation)))))));
 };

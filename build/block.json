@@ -91,6 +91,15 @@
           ]
         }
       ]
+    },
+    "options": {
+      "type": "object",
+      "default": {
+        "showName": true,
+        "showDesignation": true,
+        "showSocial": true,
+        "openInNewTab": true
+      }
     }
   },
   "supports": {

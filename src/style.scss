@@ -6,6 +6,9 @@ $primaryColor: #4527a4;
 	* {
 		box-sizing: border-box;
 	}
+	a{
+		outline: none !important;
+	}
 
 .tcf_cards_section {
     padding-top: 5%;

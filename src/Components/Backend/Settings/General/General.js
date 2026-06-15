@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import { purposeTypeOptions } from '../../../../utils/options';
 import { updateData } from '../../../../utils/functions';
 import { ItemsPanel } from '../../../../../../bpl-tools/Components';
@@ -47,6 +47,20 @@ const General = ({ attributes, setAttributes }) => {
           itemLabel="Profile"
           ItemSettings={OneSetting}
         />
+      </PanelBody>
+
+
+          <PanelBody className="bPlPanelBody"
+        title={__("Elements", "team-section")}
+        initialOpen={false}>
+
+        <ToggleControl className='mt10' label="Show Name" checked={options.showName} onChange={(val) => setAttributes({ options: { ...options, showName: val } })} />
+        <ToggleControl className='mt10' label="Show Designation" checked={options.showDesignation} onChange={(val) => setAttributes({ options: { ...options, showDesignation: val } })} />
+        <ToggleControl className='mt10' label="Show Social" checked={options.showSocial} onChange={(val) => setAttributes({ options: { ...options, showSocial: val } })} />
+        <ToggleControl className='mt10' label="Open In New Tab" checked={options.openInNewTab} onChange={(val) => setAttributes({ options: { ...options, openInNewTab: val } })} />
+
+
+
       </PanelBody>
 
 </>

@@ -7,6 +7,9 @@
 .wp-block-tsb-team-card-flip-pro * {
   box-sizing: border-box;
 }
+.wp-block-tsb-team-card-flip-pro a {
+  outline: none !important;
+}
 .wp-block-tsb-team-card-flip-pro .tcf_cards_section {
   padding-top: 5%;
 }
