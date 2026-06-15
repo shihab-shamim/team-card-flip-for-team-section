@@ -1033,6 +1033,9 @@ const Style = ({
   const cardsGridSl = `${cardContainerSl} .tcf_cards_grid`;
   const cardsCardSl = `${cardsGridSl} .tcf_cards_item`;
   const cardsImageSl = `${cardsCardSl} .tcf_cards_thumbnail_img`;
+  const cardSocialSl = `${cardsCardSl} .tcf_cards_social_list`;
+  const cardSocialLinkSl = `${cardSocialSl} .tcf_cards_social_link`;
+  const cardSocialOverlaySl = `${cardsCardSl} .tcf_cards_social_overlay`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -1068,7 +1071,38 @@ const Style = ({
 		${cardsCardSl}:hover img {
                         transform: scale(${styles?.image?.hoverScal});
                     }
-						
+
+
+					${cardSocialSl}{
+					gap: ${styles?.icon?.gap}px;					
+					}
+
+					${cardSocialLinkSl}{
+					color:${styles?.icon?.color};
+					border: ${styles?.icon?.border?.width} ${styles?.icon?.border?.style} ${styles?.icon?.border?.color};
+					width: ${styles?.icon?.width};
+					height: ${styles?.icon?.height};
+					svg{
+					width: ${styles?.icon?.size}px;
+					height: ${styles?.icon?.size}px;
+					
+					}
+					}
+
+					 ${cardSocialLinkSl}:hover {
+                                    background-color: ${styles?.icon?.hoverBackgroundColor};
+                                    color: ${styles?.icon?.hoverColor};
+
+									svg{
+									 color:${styles?.icon?.hoverColor};
+									 fill:${styles?.icon?.hoverColor};
+									}
+                                }
+					${cardSocialOverlaySl}{
+					background-color: ${styles?.icon?.overlayColor};
+					}
+
+
 
 		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
 			${cardsGridSl}{
@@ -1122,6 +1156,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
+// SVG icon এর hardcoded fill color সরিয়ে currentColor দেওয়া হচ্ছে
+// যাতে CSS color property দিয়ে icon এর রঙ control করা যায়
+const normalizeIconColor = svgString => {
+  if (!svgString) return svgString;
+  return svgString.replace(/fill\s*=\s*["'][^"']*["']/gi, 'fill="currentColor"').replace(/(<svg[^>]*)(>)/i, (match, p1, p2) => {
+    if (!p1.includes('fill=')) {
+      return p1 + ' fill="currentColor"' + p2;
+    }
+    return match;
+  });
+};
 const OneCard = ({
   attributes,
   setAttributes
@@ -1163,7 +1208,7 @@ const OneCard = ({
     rel: options.openInNewTab ? "noopener noreferrer" : "",
     className: "tcf_cards_social_link",
     dangerouslySetInnerHTML: {
-      __html: item.icon
+      __html: normalizeIconColor(item.icon)
     }
   })))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tcf_cards_info"

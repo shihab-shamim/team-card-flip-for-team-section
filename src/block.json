@@ -160,6 +160,21 @@
 						"height":"420px",
 						"imageFit":"cover",
 						"hoverScal":1.2
+					},
+					"icon":{
+						"width":"40px",
+						"height":"40px",
+						"border":{
+							"style":"solid",
+							"width":"1px",
+							"color":"#ffffff"
+						},
+						"color":"#ffffff",
+						"hoverColor":"#000000",
+						"hoverBackgroundColor":"#ffffff",
+						"size":16,
+						"gap":10,
+						"overlayColor":"rgba(0, 0, 0, 0.7)"
 					}
 		}
 	}

@@ -10,6 +10,9 @@ const Style = ({ attributes, id }) => {
 	const cardsGridSl = `${cardContainerSl} .tcf_cards_grid`; 
 	const cardsCardSl = `${cardsGridSl} .tcf_cards_item`; 
 	const cardsImageSl = `${cardsCardSl} .tcf_cards_thumbnail_img`; 
+	const cardSocialSl = `${cardsCardSl} .tcf_cards_social_list`; 
+	const cardSocialLinkSl = `${cardSocialSl} .tcf_cards_social_link`; 
+	const cardSocialOverlaySl = `${cardsCardSl} .tcf_cards_social_overlay`; 
 
 	return <style dangerouslySetInnerHTML={{
 		__html: `
@@ -45,7 +48,38 @@ const Style = ({ attributes, id }) => {
 		${cardsCardSl}:hover img {
                         transform: scale(${styles?.image?.hoverScal});
                     }
-						
+
+
+					${cardSocialSl}{
+					gap: ${styles?.icon?.gap}px;					
+					}
+
+					${cardSocialLinkSl}{
+					color:${styles?.icon?.color};
+					border: ${styles?.icon?.border?.width} ${styles?.icon?.border?.style} ${styles?.icon?.border?.color};
+					width: ${styles?.icon?.width};
+					height: ${styles?.icon?.height};
+					svg{
+					width: ${styles?.icon?.size}px;
+					height: ${styles?.icon?.size}px;
+					
+					}
+					}
+
+					 ${cardSocialLinkSl}:hover {
+                                    background-color: ${styles?.icon?.hoverBackgroundColor};
+                                    color: ${styles?.icon?.hoverColor};
+
+									svg{
+									 color:${styles?.icon?.hoverColor};
+									 fill:${styles?.icon?.hoverColor};
+									}
+                                }
+					${cardSocialOverlaySl}{
+					background-color: ${styles?.icon?.overlayColor};
+					}
+
+
 
 		${tabBreakpoint}{
 			${cardsGridSl}{
