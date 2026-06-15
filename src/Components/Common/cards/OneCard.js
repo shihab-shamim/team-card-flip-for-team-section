@@ -11,7 +11,7 @@ export const OneCard = ({attributes, setAttributes}) => {
           {profiles.map((profile, index) => (
             <div className="tcf_cards_item" key={index}>
               <div className="tcf_cards_thumbnail">
-                <img src={profile.image} alt={profile.name} />
+                <img className="tcf_cards_thumbnail_img" src={profile.image} alt={profile.name} />
                 {options.showSocial && (
                 <div className="tcf_cards_social_overlay">
                   <ul className="tcf_cards_social_list">

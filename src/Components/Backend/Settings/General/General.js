@@ -44,7 +44,7 @@ const General = ({ attributes, setAttributes,device }) => {
           attributes={attributes}
           setAttributes={setAttributes}
           arrKey="profiles"
-          itemLabel="Profile"
+          itemLabel="Card"
           ItemSettings={OneSetting}
         />
       </PanelBody>

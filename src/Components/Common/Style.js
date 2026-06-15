@@ -8,6 +8,8 @@ const Style = ({ attributes, id }) => {
 	const cardsSectionSl = `${mainSl} .tcf_cards_section`;
 	const cardContainerSl = `${cardsSectionSl} .tcf_cards_container`; 
 	const cardsGridSl = `${cardContainerSl} .tcf_cards_grid`; 
+	const cardsCardSl = `${cardsGridSl} .tcf_cards_item`; 
+	const cardsImageSl = `${cardsCardSl} .tcf_cards_thumbnail_img`; 
 
 	return <style dangerouslySetInnerHTML={{
 		__html: `
@@ -32,6 +34,18 @@ const Style = ({ attributes, id }) => {
 		 row-gap: ${styles?.rowGap || 15}px;
 
 		}
+
+
+		${cardsImageSl}{
+			width: ${styles?.image?.width};
+			height: ${styles?.image?.height};
+			object-fit: ${styles?.image?.imageFit};
+		}
+
+		${cardsCardSl}:hover img {
+                        transform: scale(${styles?.image?.hoverScal});
+                    }
+						
 
 		${tabBreakpoint}{
 			${cardsGridSl}{

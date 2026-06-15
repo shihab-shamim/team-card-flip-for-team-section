@@ -493,6 +493,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const safeCSSUrl = url => {
+  const sanitized = (0,_common__WEBPACK_IMPORTED_MODULE_6__.sanitizeURL)(url);
+  if (!sanitized) {
+    return 'none';
+  }
+  const cleanUrl = sanitized.replace(/['"()]/g, '');
+  return `url('${cleanUrl}')`;
+};
 
 const isValidCSS = (p, v) => (0,_common__WEBPACK_IMPORTED_MODULE_6__.isExist)(v) ? `${p}: ${v};` : '';
 const getBackgroundCSS = (bg, isSolid = true, isGradient = true, isImage = true) => {
@@ -507,7 +515,7 @@ const getBackgroundCSS = (bg, isSolid = true, isGradient = true, isImage = true)
     size = '',
     overlayColor = ''
   } = bg || {};
-  const styles = 'gradient' === type && isGradient ? isValidCSS('background', gradient) : 'image' === type && isImage ? `background: url(${image?.url});
+  const styles = 'gradient' === type && isGradient ? isValidCSS('background', gradient) : 'image' === type && isImage ? `background: ${safeCSSUrl(image?.url)};
 				${isValidCSS('background-color', overlayColor)}
 				${isValidCSS('background-position', position)}
 				${isValidCSS('background-size', size)}
@@ -760,7 +768,7 @@ const getImagePosition = img => {
 const getImageCSS = (img = {}) => {
   if (img) {
     return {
-      desktop: (0,_common__WEBPACK_IMPORTED_MODULE_6__.isExist)(img.url) ? `background-image: url(${img.url}); ${getImagePosition(img?.desktop)}` : '',
+      desktop: (0,_common__WEBPACK_IMPORTED_MODULE_6__.isExist)(img.url) ? `background-image: ${safeCSSUrl(img.url)}; ${getImagePosition(img?.desktop)}` : '',
       tablet: (0,_common__WEBPACK_IMPORTED_MODULE_6__.isExist)(img.url) ? getImagePosition(img?.tablet) : '',
       mobile: (0,_common__WEBPACK_IMPORTED_MODULE_6__.isExist)(img.url) ? getImagePosition(img?.mobile) : ''
     };
@@ -780,8 +788,13 @@ const getVideoCSS = (video, selector) => {
   videoEl.classList.add('bPlVideo');
   if (!el) {
     if (parentEl && url) {
-      videoEl.innerHTML = `<source src=${url}></source>`;
-      parentEl.appendChild(videoEl);
+      const sanitizedUrl = (0,_common__WEBPACK_IMPORTED_MODULE_6__.sanitizeURL)(url);
+      if (sanitizedUrl) {
+        const sourceEl = document.createElement('source');
+        sourceEl.src = sanitizedUrl;
+        videoEl.appendChild(sourceEl);
+        parentEl.appendChild(videoEl);
+      }
     }
   }
   videoEl.loop = loop;
@@ -981,7 +994,7 @@ const getMaskCSS = mask => {
     type: 'hexagon'
   }];
   const getShape = type => svgShape.find(e => e.type === type);
-  return isMask ? `-webkit-mask-image: url(${shape.type === 'custom' ? shape.url : getShape(shape.type).svg});
+  return isMask ? `-webkit-mask-image: ${shape.type === 'custom' ? safeCSSUrl(shape.url) : `url(${getShape(shape.type).svg})`};
 		-webkit-mask-size: ${size.type === 'custom' ? size.scale : size.type};
 		${position.type === 'custom' ? `${isValidCSS('-webkit-mask-position-x', position.x)}
 			${isValidCSS('-webkit-mask-position-y', position.y)}` : `${isValidCSS('-webkit-mask-position', position.type)}`}
@@ -1018,6 +1031,8 @@ const Style = ({
   const cardsSectionSl = `${mainSl} .tcf_cards_section`;
   const cardContainerSl = `${cardsSectionSl} .tcf_cards_container`;
   const cardsGridSl = `${cardContainerSl} .tcf_cards_grid`;
+  const cardsCardSl = `${cardsGridSl} .tcf_cards_item`;
+  const cardsImageSl = `${cardsCardSl} .tcf_cards_thumbnail_img`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
@@ -1042,6 +1057,18 @@ const Style = ({
 		 row-gap: ${styles?.rowGap || 15}px;
 
 		}
+
+
+		${cardsImageSl}{
+			width: ${styles?.image?.width};
+			height: ${styles?.image?.height};
+			object-fit: ${styles?.image?.imageFit};
+		}
+
+		${cardsCardSl}:hover img {
+                        transform: scale(${styles?.image?.hoverScal});
+                    }
+						
 
 		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
 			${cardsGridSl}{
@@ -1120,6 +1147,7 @@ const OneCard = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tcf_cards_thumbnail"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    className: "tcf_cards_thumbnail_img",
     src: profile.image,
     alt: profile.name
   }), options.showSocial && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
