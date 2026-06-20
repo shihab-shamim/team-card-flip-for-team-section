@@ -1196,6 +1196,7 @@ const normalizeIconColor = svgString => {
 };
 const OneCard = ({
   attributes,
+  Richtext,
   setAttributes
 }) => {
   const {
@@ -1239,11 +1240,41 @@ const OneCard = ({
     }
   })))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tcf_cards_info"
-  }, options.showName && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
-    className: "tcf_cards_name"
-  }, profile.name), options.showDesignation && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
-    className: "tcf_cards_designation"
-  }, profile.designation)))))));
+  }, options.showName && profile.name && !Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
+    className: "tcf_cards_name",
+    dangerouslySetInnerHTML: {
+      __html: profile.name
+    }
+  }), options.showName && Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Richtext, {
+    tagName: "h4",
+    value: profile.name,
+    onChange: value => setAttributes({
+      ...attributes,
+      profiles: attributes.profiles.map((p, i) => i === index ? {
+        ...p,
+        name: value
+      } : p)
+    }),
+    className: "tcf_cards_name",
+    placeholder: "Enter name"
+  }), options.showDesignation && profile.designation && !Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
+    className: "tcf_cards_designation",
+    dangerouslySetInnerHTML: {
+      __html: profile.designation
+    }
+  }), options.showDesignation && Richtext && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Richtext, {
+    tagName: "h5",
+    value: profile.designation,
+    onChange: value => setAttributes({
+      ...attributes,
+      profiles: attributes.profiles.map((p, i) => i === index ? {
+        ...p,
+        designation: value
+      } : p)
+    }),
+    className: "tcf_cards_designation",
+    placeholder: "Enter designation"
+  })))))));
 };
 
 /***/ }),

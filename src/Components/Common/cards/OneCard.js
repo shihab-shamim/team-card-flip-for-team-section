@@ -13,7 +13,7 @@
       });
   };
 
-  export const OneCard = ({attributes, setAttributes}) => {
+  export const OneCard = ({attributes, Richtext, setAttributes}) => {
     const {profiles = [], options={showName:true,showDesignation:true,showSocial:true,openInNewTab:true}} = attributes || {};
     return (
       <section className="tcf_cards_section">
@@ -36,8 +36,13 @@
                   </div>)}
                 </div>
                 <div className="tcf_cards_info">
-                  {options.showName && <h4 className="tcf_cards_name">{profile.name}</h4>}
-                  {options.showDesignation && <h5 className="tcf_cards_designation">{profile.designation}</h5>}
+                  {options.showName && profile.name && !Richtext && <h4 className="tcf_cards_name" dangerouslySetInnerHTML={{ __html: profile.name }} />}
+
+                  {options.showName && Richtext && <Richtext tagName="h4" value={profile.name} onChange={(value) => setAttributes({ ...attributes, profiles: attributes.profiles.map((p, i) => i === index ? { ...p, name: value } : p) })} className="tcf_cards_name" placeholder="Enter name" />}
+
+                  {options.showDesignation && profile.designation && !Richtext && <h5 className="tcf_cards_designation" dangerouslySetInnerHTML={{ __html: profile.designation }} />}
+
+                  {options.showDesignation && Richtext && <Richtext tagName="h5" value={profile.designation} onChange={(value) => setAttributes({ ...attributes, profiles: attributes.profiles.map((p, i) => i === index ? { ...p, designation: value } : p) })} className="tcf_cards_designation" placeholder="Enter designation" />}
                 </div>
               </div>
             ))}
